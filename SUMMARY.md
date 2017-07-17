@@ -7,4 +7,5 @@
 * [Day04---选择结构](day04xuan-ze-jie-gou.md)
 * [Day05---函数](day05han-shu.md)
 * [Day06---数组](day06shu-zu.md)
+* [Day07---字符串和数学函数](day07-bom-cao-zuo.md)
 

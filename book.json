@@ -1,0 +1,55 @@
+{
+    "title" : "python 课堂笔记",
+    "author":" 李振超",
+
+    "description":"课堂笔记,学生提前预习",
+    "language":"zh-hans",
+    "links" : {
+        "sidebar" : {
+            "联系我们" : "http://www.yztcedu.com"
+        }
+    },
+    "styles": {
+        "website": "styles/website.css",
+        "ebook": "styles/ebook.css",
+        "pdf": "styles/pdf.css",
+        "mobi": "styles/mobi.css",
+        "epub": "styles/epub.css"
+    },
+    "plugins":[
+       "splitter",
+       "expandable-chapters-small",
+       
+       "page-toc-button",
+       "-highlight", 
+       "prism", 
+       "prism-themes",
+       "tbfed-pagefooter",
+       "katex",
+       "disqus",
+       "sitemap"
+    ],
+    "pluginsConfig": {
+        "page-toc-button": {
+            "maxTocDepth": 2,
+            "minTocSize": 2
+        },
+        "disqus": {
+            "shortName": "zhenchao125"
+        },
+        "prism": {
+            "css": [
+               "prism-themes/themes/prism-base16-ateliersulphurpool.light.css"
+            ]
+        },
+         "tbfed-pagefooter": {
+            "copyright":"Copyright &copy lizhenchao 2017",
+            "modify_label": "<br>该文件最后修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "sitemap": {
+            "hostname": "https://www.gitbook.com/@zhenchao125"
+        }
+    }
+}
+

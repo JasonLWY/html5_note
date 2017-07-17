@@ -1,0 +1,43 @@
+li[class*=chapter] > a{  
+    transition: all .4s;
+}
+
+*{
+    transition: background-color .8s;
+}
+
+h1, h2{
+    /*border-bottom:1px dashed red;*/
+}
+h1:hover, h2:hover, h3:hover{
+    color:blue;
+    text-shadow:4px 4px 2px gray;
+}
+p:hover{
+    background-color : rgba(100, 100, 255, .2);
+}
+li:hover{
+    background-color : rgba(255, 100, 100, .2);
+}
+li[class*=chapter]:hover{
+    background-color : white;
+}
+
+pre[class^=language-]{
+    color : rgb(204, 120, 50) !important;
+    font-size:2rem !important;
+    line-height : 1.2em !important;
+}
+pre[class^=language-]:hover *{
+   
+}
+
+
+
+li[class*=chapter] > a:hover{
+    background-color:rgba(0,0,0,0.1) !important;
+    font-size : 1.3em;
+    color : blue !important;
+}
+
+

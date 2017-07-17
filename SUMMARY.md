@@ -11,4 +11,5 @@
 * [Day08---BOM 操作](day08-bom-cao-zuo.md)
 * [Day09-10---DOM 基础](day09-10-dom-ji-chu.md)
 * [Day11---DOM事件](day11-domshi-jian.md)
+* [Day12---事件对象](day12shi-jian-dui-xiang.md)
 

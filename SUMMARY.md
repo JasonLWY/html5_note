@@ -6,4 +6,5 @@
 * [Day03---选择语句](day03xuan-ze-yu-ju.md)
 * [Day04---选择结构](day04xuan-ze-jie-gou.md)
 * [Day05---函数](day05han-shu.md)
+* [Day06---数组](day06shu-zu.md)
 

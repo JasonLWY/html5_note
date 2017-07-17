@@ -5,4 +5,5 @@
 * [Day02---变量和数据类型](day02bian-liang-he-shu-ju-lei-xing.md)
 * [Day03---选择语句](day03xuan-ze-yu-ju.md)
 * [Day04---选择结构](day04xuan-ze-jie-gou.md)
+* [Day05---函数](day05han-shu.md)
 

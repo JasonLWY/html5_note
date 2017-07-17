@@ -8,4 +8,6 @@
 * [Day05---函数](day05han-shu.md)
 * [Day06---数组](day06shu-zu.md)
 * [Day07---字符串和数学函数](day07-bom-cao-zuo.md)
+* [Day08---BOM 操作](day08-bom-cao-zuo.md)
+* [Day09-10---DOM 基础](day09-10-dom-ji-chu.md)
 

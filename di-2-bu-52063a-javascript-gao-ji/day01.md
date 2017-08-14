@@ -96,7 +96,7 @@
 
  
 
-```html
+```javascript
 <script type="text/javascript">
   	//用大括号括起来的一系列的键值对，就构成了JavaScript对象。这种对象称之为字面量对象。
 	var person = {

@@ -24,7 +24,8 @@
 
 > 看下面的代码：
 
-```html
+```javascript
+
 <script type="text/javascript">
   	//定义一个构造函数。
 	function Father () {

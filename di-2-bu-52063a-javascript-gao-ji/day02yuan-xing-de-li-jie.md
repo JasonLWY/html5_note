@@ -10,7 +10,8 @@
 
 ​	看下面的代码：
 
-```html
+```javascript
+
 <body>
     <script type="text/javascript">
     	/*
@@ -37,7 +38,8 @@
 
 ​	看下面的代码：
 
-```html
+```javascript
+
 <body>
     <script type="text/javascript">
 	    function Person () {
@@ -67,7 +69,8 @@
 
 > 看下面的代码：
 
-```html
+```javascript
+
 <body>
     <script type="text/javascript">
 	    function Person () {    	
@@ -119,7 +122,8 @@
 
 看下面的代码：
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person () {
 	}
@@ -138,7 +142,8 @@
 
 看下面的代码：
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person () {
 		
@@ -171,7 +176,8 @@
 
 ​	但是开发者尽量不要用这种方式去访问，因为操作不慎会改变这个对象的继承原型链。
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person () {
 		
@@ -197,7 +203,8 @@
 
 ​	hasOwnProperty方法，可以判断一个属性是否来自对象本身。
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person () {
 		
@@ -227,7 +234,8 @@
 
 ​	in操作符用来判断一个属性是否存在于这个对象中。但是在查找这个属性时候，先在对象本身中找，如果对象找不到再去原型中找。换句话说，只要对象和原型中有一个地方存在这个属性，就返回true
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person () {
 		
@@ -246,7 +254,8 @@
 >
 > 如果一个属性存在，但是没有在对象本身中，则一定存在于原型中。
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person () {
 	}
@@ -284,7 +293,8 @@
 
 ​	在构造函数中添加的属性和方法，每个对象都有自己独有的一份，大家不会共享。这个特性对属性比较合适，但是对方法又不太合适。因为对所有对象来说，他们的方法应该是一份就够了，没有必要每人一份，造成内存的浪费和性能的低下。
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person() {
 	    this.name = "李四";
@@ -302,7 +312,8 @@
 
 > 可以使用下面的方法解决：
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person() {
 	    this.name = "李四";
@@ -325,7 +336,8 @@
 
 ​	原型模式适合封装方法，构造方法模式适合封装属性，综合两种模式的优点就有了组合模式。
 
-```html
+```javascript
+
 <script type="text/javascript">
 	//在构造方法内部封装属性
 	function Person(name, age) {
@@ -357,7 +369,8 @@
 
 > 看下面的代码：
 
-```html
+```javascript
+
 <script type="text/javascript">
 	//构造方法内部封装属性
 	function Person(name, age) {

@@ -1,5 +1,5 @@
 {
-    "title" : "HTML 课堂笔记",
+    "title" : "Javascript 课堂笔记",
     "author":" 李振超",
 
     "description":"课堂笔记,学生提前预习",
@@ -19,13 +19,11 @@
     "plugins":[
        "splitter",
        "expandable-chapters-small",
-       
        "page-toc-button",
        "-highlight", 
        "prism", 
        "prism-themes",
        "tbfed-pagefooter",
-       "katex",
        "disqus",
        "sitemap"
     ],

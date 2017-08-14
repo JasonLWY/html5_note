@@ -19,3 +19,10 @@
 
 ## 第2部分: JavaScript 高级
 
+* [Day01-面向对象入门](di-2-bu-52063a-javascript-gao-ji/day01.md)
+* [Day02---原型的理解](di-2-bu-52063a-javascript-gao-ji/day02yuan-xing-de-li-jie.md)
+* [Day03---Javascript的继承](di-2-bu-52063a-javascript-gao-ji/day03-javascriptde-ji-cheng.md)
+* [Day04---作用域和闭包](di-2-bu-52063a-javascript-gao-ji/day04zuo-yong-yu-he-bi-bao.md)
+* [Day05---面向对象综合](di-2-bu-52063a-javascript-gao-ji/day05mian-xiang-dui-xiang-zong-he.md)
+* [Day06-07---ajax](di-2-bu-52063a-javascript-gao-ji/day06-07-ajax.md)
+

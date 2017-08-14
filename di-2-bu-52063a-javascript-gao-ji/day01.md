@@ -132,7 +132,8 @@ alert(person["name"]);  //
 > 1. 对象.属性名的方式，只适合知道了属性的名字，可以直接写。比如： person.age 。如果属性名是个变量，则这种方法无效， 对象.变量名 会出现语法错误。
 > 2. 对象[属性名]，这种方式使用无限制。如果是字符串常量，则应该用""或''引起来，如果是变量，可以直接使用。
 
-```html
+```javascript
+
 person.age = 100; // ok
 var n = "age";
 person.a = 101;	//  no ok 语法错误
@@ -199,7 +200,8 @@ for (pn in person) {
 
 ## 4.1	使用new Object()创建
 
-```html
+```javascript
+
 <script type="text/javascript">
 	//使用object创建一个对象	完全等同于 var person = {};
 	var person = new Object();
@@ -218,7 +220,8 @@ for (pn in person) {
 
 > 工厂模式是软件工程领域一种广为人知的设计模式，这种模式抽象了创建具体对象的过程，考虑到在 ECMAScript 中无法创建类，开发人员就发明了一种函数，用函数来封装以特定接口创建对象的细节。
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function createPerson(name, age, job) {
 	    var o = new Object();
@@ -243,7 +246,8 @@ for (pn in person) {
 >
 > 看下面的代码
 
-```html
+```javascript
+
 <script type="text/javascript">
 	function Person (name, age, sex) {
 		this.name = name;

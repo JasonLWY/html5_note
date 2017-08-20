@@ -26,4 +26,5 @@
 * [Day05---面向对象综合](di-2-bu-52063a-javascript-gao-ji/day05mian-xiang-dui-xiang-zong-he.md)
 * [Day06-07---ajax](di-2-bu-52063a-javascript-gao-ji/day06-07-ajax.md)
 * [Day08---动画和特效](di-2-bu-52063a-javascript-gao-ji/day08dong-hua-he-te-xiao.md)
+* [Day09---设计模式](di-2-bu-52063a-javascript-gao-ji/day09she-ji-mo-shi.md)
 

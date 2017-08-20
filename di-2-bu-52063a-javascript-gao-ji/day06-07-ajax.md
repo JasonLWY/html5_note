@@ -1,483 +1,335 @@
-#  高级Day 04---作用域链和闭包
+# 高级Day 06-07---ajax
 
-# 一、匿名函数
+# 零、基础知识准备
 
-## 1.1	匿名函数的概念
+## 0.1	B/S和C/S
 
-​	声明一个没有函数名的函数，就是匿名函数。
+​	什么是B/S和C/S
 
-​	有函数名的函数就是具名函数。
+B/s :  browser / server
 
-> 看下面的代码：
+C/s:  client /server
 
-```html
-<script type="text/javascript">
-  	/*
-  	//这里定义了一个函数，而且没有函数名。这样写语法是错误的,如果允许这样定义，那么根本就没有办法调用。
-  	//所以，我们可以用一个变量来存储一下
- 	function(){ 
-      
- 	}
- 	*/
-  // 声明了一个匿名函数，并把匿名函数赋值给变量f。 注意这个时候这个匿名函数并没有执行。
-  var f = function(){
-    alert("哥们我是匿名函数内的代码");
+## 0.2	HTTP协议
+
+​	请求和响应
+
+请求协议：
+
+​	浏览器向服务器发送请求的时候使用的协议
+
+请求行
+
+​	访问的路径，主机，协议版本
+
+请求头
+
+​	浏览器的一些信息
+
+请求体
+
+​	get请求没有请求体
+
+ 	post请求才有请求体
+
+
+
+响应协议：
+
+ 	响应码：服务器给浏览器响应后的一种代码。     200 ok     404：资源没有找到     500：服务器内部问题
+
+
+
+## 0.3	GET请求和POST请求
+
+​	GET请求和POST请求的区别
+
+get请求：
+
+​	没有请求体。 get请求如果想向服务器传递数据，必须把要传递的数据放入到  **url** 中。
+
+​	请求数据是键值对的形式，建和值用=连接
+
+post请求：
+
+​	有请求体。而且我们的数据都是通过请求体提交的数据
+
+
+
+# 一、AJAX简介
+
+​	传统的网页（不使用 AJAX）如果需要更新内容，必须重载整个网页页面，在加载新的网页的过程中，用户会有一个等待。降低了用户体验。
+
+​	局部更新！
+
+​	AJAX的出现就可以让网页进行部分更新。
+
+​	异步和同步：
+
+​	Ajax的全称是Asynchronous JavaScript+XML ，Ajax不是一个技术，它实际上是几种技术，每种技术都有其独特这处，合在一起就成了一个功能强大的新技术。Ajax结合了异步技术、XML以及JavaScript等编程技术，可以让开发人员构建基于Js技术的Web应用，并打破了使用页面重载的惯例。 Ajax是使用客户端脚本与Web服务器交换数据的Web应用开发方法。这样，Web页面不用打断交互流程进行重新加载，就可以动态地更新。使用Ajax，用户可以创建接近本地桌面应用的直接、高可用、更丰富、更动态的Web用户界面。
+
+​	Ajax刚出生的时候，用的比较多的数据格式是XML，后来JSON数据格式更多的去替换了XML格式的数据。
+
+# 二、AJAX工作原理
+
+- ![](http://o7cqr8cfk.bkt.clouddn.com/public/16-11-14/99053133.jpg)
+
+# 三、使用AJAX
+
+​	AJAX的核心对象是XMLHttpRequest, 这个对象在目前的所有浏览器都支持，只是IE6 和 IE5的写法不一样而已。使用AJAX一般按照下面 **4个步骤** 使用即可。
+
+## 3.1	步骤1：创建XMLHttpRequest对象
+
+​	这个对象从IE5开始支持，后来各大浏览器都进行了跟进。IE7+和chrome、firefox写法一样，IE6以前的浏览器一种写法。实际开发中，一般使用如下的兼容写法。
+
+```javascript
+function createXHR() {
+  if(window.XMLHttpRequest) {
+    //标准浏览器创建XMLHttpRequest对象的方式
+  	return new XMLHttpRequest();
+  }else{
+    //IE5和IE6的创建方式
+ 	return new ActiveXObject("Microsoft.XMLHTTP");
   }
-  //我们可以把变量 f 当做一个函数名来调用
-  f();  //调用上面定义的匿名函数
-</script>
+}
 ```
 
-## 1.2 匿名函数的应用场景
-
-​	有些场景大家已经比较熟悉了。
-
-### 1.2.1	给标签绑定事件
-
-```html
-<script type="text/javascript">
-	var btn = document.getElementById("btn");
-	btn.onclick = function () {
-		alert("点我干吗");
-	}
-</script>
-```
-
-###	1.2.2	在定时器中使用
-
-```html
-<body>
-	<h1></h1>
-	<script type="text/javascript">
-		var showTimeArar = document.getElementsByTagName("h1")[0];
-		setInterval(function () {
-			showTimeArar.innerHTML = new Date().toLocaleString();
-		}, 1000);
-	</script>
-</body>
-```
-
-### 1.2.3	给对象定义方法
-
-```html
-<script type="text/javascript">
-	var person = {
-		name : "凤姐",
-		age : 30,
-		play : function () {
-			alert(this.name + "在美国玩");
-		}
-	}
-	person.play();
-</script>
-```
-
-## 1.3	匿名函数的自调用
-
-> 有些场景，我们需要定义完函数之后立即执行，这个时候可以定义一个匿名函数来完成。
+## 3.2	步骤2：调用open方法
 
 ```javascript
-(function () {
-	alert("匿名函数立即执行")
-    
-})();
-(function () {
-	alert("匿名函数立即执行")
-    
-}());
+/*调用open方法
+* 参数1：请求方法，一般是get或post
+* 参数2：请求是url
+* 参数3：是否为异步。true表示异步，默认是true异步。
+*/
+xhr.open("GET", "msg.json", true);
 ```
-
-> 说明
-
-1. 需要把匿名函数用一对圆括号括起来，把匿名函数作为一个整体来对待
-2. 最后再添加一对圆括号表示调用函数。这样定义的匿名函数就会立即执行
-3. 当然，这个时候即使给这个函数加上方法名，也可以调用。不过这种情况为什么还要加方法名呢?
-
-
-
-# 二、变量的作用域
-
-> 变量的作用域指的是，变量起作用的范围。也就是能访问到变量的有效范围。
->
-> JavaScript的变量依据作用域的范围可以分为：
->
-> - 全局变量
-> - 局部变量
-
-## 2.1	全局变量
-
-> **==定义在函数外部的变量都是全局变量。==**
->
-> 全局变量的作用域是**==当前文档==**，也就是当前文档所有的JavaScript脚本都可以访问到这个变量。
->
-> 下面的代码是书写在同一个HTML文档中的2个JavaScript脚本:
-
-```javascript
-<script type="text/javascript">
-  	//定义了一个全局变量。那么这个变量在当前html页面的任何的JS脚本部分都可以访问到。
- 	var v = 20; 
-	alert(v); //弹出：20
-</script>
-<script type="text/javascript">
-  	//因为v是全局变量，所以这里仍然可以访问到。
-  	alert(v);  //弹出：20
-</script>
-```
-
-> 再看下面一段代码 :
-
-```javascript
-<script type="text/javascript">
-  	alert(a);
-	var a = 20;
-</script>
-```
-
-> 运行这段代码并不会报错，	alert(a);   这行代码弹出：undefined。
-
-**为什么在声明 a 之前可以访问变量 a 呢? 能访问 a 为什么输出是undefined而不是20呢？**
-
-**==声明提前！==**
-
-- 所有的全局变量的声明都会提前到JavaScript的前端声明。也就是所有的全局变量都是先声明的，并且早于其他一切代码。
-- 但是变量的赋值的位置并不会变，仍然在原位置赋值。
-
-> 所以上面的代码等效下面的代码：
-
-```javascript
-<script type="text/javascript">
-  	var a; //声明提前
-  	alert(a);
-	a = 20;	//赋值仍然在原来的位置
-</script>
-```
-
-## 2.2	局部变量
-
-> 在函数内声明的变量，叫局部变量！表示形参的变量也是局部变量！
->
-> 局部变量的作用域是局部变量所在的整个函数的内部。 在函数的外部不能访问局部变量。
-
-```javascript
-<script type="text/javascript">
-    function f(){
-        alert(v);  //	弹出：undefined
-        var v = "abc";  // 声明局部变量。局部变量也会声明提前到函数的最顶端。
-        alert(v);	//	弹出：abc
-    }
-    alert(v);  //报错。因为变量v没有定义。 方法 f 的外部是不能访问方法内部的局部变量 v 的。
- </script>
-```
-
-## 2.3	全局变量和局部变量的一些细节
-
-> 看下面一段代码: 
-
-```javascript
-<script type="text/javascript">
-    var m = 10;
-    function f(){
-        var m = 20;
-        alert("方法内部：" + m);  //代码1
-    }
-    f();
-    alert("方法外部：" + m);	//代码2
-</script>
-```
-
-*在方法内部访问m，访问到的是哪个m呢？局部变量的m还是全局变量的m？*
-
-### 2.3.1	全局变量和局部变量重名问题
-
-1. 在上面的代码中，当局部变量与全局变量重名时，**局部变量的作用域会覆盖全局变量的作用域。**也就是说在函数内部访问重名变量时，访问的是局部变量。==所以 "代码1" 部分输出的是20。==
-2. 当函数返回离开局部变量的作用域后，又回到全局变量的作用域。==所以代码2输出10。==
-3. 如何在函数访问同名的全局变量呢？==通过：window.全局变量名==
-
-```javascript
-<script type="text/javascript">
-    var m = 10;
-    function f(){
-        var m = 20;
-       	alert(window.m);  //访问同名的全局变量。其实这个时候相当于在访问window这个对象的属性。
-    }
-    f();  
-</script>
-```
-
-### 2.3.2	JavaScript中有没有块级作用域？
-
-> 看下面一段代码: 
-
-```javascript
-<script type="text/javascript">
-  var m = 5;
-  if(m == 5){
-    var n = 10;
-  }
-  alert(n); //代码1
-</script>
-```
-
-> 代码1输出什么？ undefined还是10？还是报错？
->
-> **==输出10！==**
-
-- **JavaScript的作用域是按照函数来划分的** 
-- **==JavaScript没有块级作用域==**
-
-*在上面的代码中，变量 n 虽然是在 if 语句内声明的，但是它仍然是全局变量，而不是局部变量。*
-
-*只有定义在方法内部的变量才是局部变量*
 
 > 注意：
 
-- 即使我们把变量的声明放在 if、for等块级语句内，也会进行==声明提前==的操作！
+- URL相对于执行代码的当前页面（当然也可以使用绝对路径）；
+- 调用 open() 方法并不会真正发送请求，而只是启动一个请求以备发送。
+- 如果使用绝对路径,则一定要和当前页面的协议、主机和端口完全一致，否则会出现错误。
 
-# **三、**作用域链---作用域的深入理解
+## 3.3	步骤3：监听请求状态(onreadystatechange)
 
-## 3.1	执行环境
+​	xhr.onreadystatechange监听请求状态，根据状态来确定数据获得之后要做的事情。
 
-​	执行环境（ execution context  ）是 JavaScript 中最为重要的一个概念。执行环境定义了变量或函数有权访问的其他数据，决定了它们各自的行为。每个执行环境都有一个与之关联的 **变量对象**（variable object），环境中定义的所有变量和函数都保存在这个对象中。虽然我们编写的代码无法访问这个对象，但解析器在处理数据时会在后台使用它。
+​	xhr.readyState的值保存了xhr的状态。一共有5种状态，每个状态用1个整数来表示
 
-​	全局执行环境是最外围的一个执行环境。在 Web 浏览器中，全局执行环境被认为是 window 对象，因此所有全局变量和函数都是作为 window 对象的属性和方法创建的。对全局执行环境变量来说，**变量对象** 就是window对象，对函数来说，变量对象就是这个函数的  **活动对象** （ *活动对象是在函数调用时创建的一个内部变量*  ）
+- 0    未初始化。对象new出来了，但是还没有调用open方法
+- 1    启动。 已经调用open，但是还没有调用send方法
+- 2    发送。 已经send方法，但是还没有接收到相应
+- 3    接收。 已经开始接收数据，但是还没有完全接收。
+- **4    完成。 已经完全接收数据。**
 
-​	每个函数都有自己的执行环境，当执行流进入一个函数时，函数的执行环境就会被推入一个执行环境栈中。而在函数执行之后，栈将执行结束的函数的执行环境弹出，把控制权返回给之前的执行环境。
+作为开发者，我们一般只关注 **第4种** 状态。
 
-## 3.2	作用域链
-
-​	**作用域链与一个执行环境相关，作用域链用于变量查找。**
-
-​	在JavaScript中，函数也是对象，实际上，JavaScript里一切都是对象。函数对象和其它对象一样，拥有可以通过代码访问的属性和一系列仅供JavaScript引擎访问的内部属性。其中一个内部属性是[[Scope]]，由ECMA-262标准第三版定义，他就指向了这个函数的作用域链。作用域链中存储的是与每个执行环境相关   **变量对象 **(函数内部也是活动对象)。
-
-​	当创建一个函数( 声明一个函数 )后，那么会创建这个函数的作用域链。这个函数的作用域链在这个时候只包含一个变量对象(window)
-
-```html
-<script type="text/javascript">
-	function sum(num1, num2){
-      
-		var sum = num1 + num2;
-		return sum;
-      
+```javascript
+//监听状态
+xhr.onreadystatechange = function () {
+  	// 如readyState的值为4，表示已经接收完数据，可以开始对数据处理。
+	if(xhr.readyState == 4){
+      	// xhr.status 保存了服务的响应码，  200表示正常响应  
+		if(xhr.status == 200){
+			alert(xhr.responseText);
+		}
 	}
-</script>
+}
 ```
 
-> 函数 sum 的作用域链示意图：
+==**注意：步骤2和步骤3可以调换顺序。**==
 
-![](http://o7cqr8cfk.bkt.clouddn.com/public/16-11-11/19437930.jpg)
+## 3.4	步骤4：调用send方法发送请求
 
-> 说明：
-
-- 函数创建的时候，这个时候作用域链中只有一个 **变量对象** (window)
-
-> 当执行下面的代码：
-
-```html
-<script type="text/javascript">
-	function sum(num1, num2){
-      	
-		var sum = num1 + num2;
-      	
-		return sum;
-	}
-  	var sum = sum(3, 4);
-</script>
+```javascript
+//send方法才是真的的发起网络请求。 参数：请求的时候向服务区传递的参数。 如果是get请求，直接传入null即可。
+xhr.send(null);
 ```
 
- 	当调用 sum 函数时，会首先创建一个 **“执行环境”**，这个 **执行环境** 有自己的作用域链，这个作用域链初始化为 sum 函数的 [[scope]] 所包含的对象。然后创建一个 与这个执行环境相关的 **变量对象( 活动对象 )** ，这个 **变量对象** 中存储了在这个函数中定义的所有参数、变量和函数。把 **变量对象** 存储在作用域中的顶端。  以后在查找变量的时候，总是从作用域链条的顶端开始查找，一直到作用域链条的末端。
+# 四、 使用AJAX是携带参数
 
-> 看下面的示意图：
+​	**不同的请求方式，携带参数的方式不一样。**
 
-![](http://o7cqr8cfk.bkt.clouddn.com/public/16-11-11/31917762.jpg)
+## **4.1**	GET请求
 
-> 说明：
+​	get请求携带的参数直接追加到url后面即可。`?`后面跟的就是参数，多个参数之间用`&`连接。注意，参数中的中文必须要经过`url`编码。
 
-1. 在sum中访问一个变量的时候，总是从作用域链的顶端开始查找，如果找到就得到结果，如果找到不到就一直查找，直到作用域链的末端。
-2. 因为在方法内的存在变量和函数的声明提前现象，所以函数一旦执行 函数的活动对象(变量对象)中总是保存了这个函数中声明的所有变量和函数。
-3. 如果在函数中又定义了一个内部函数(还没有执行)，则这个时候内部函数的作用域，是包含了外部函数的作用域。  **一旦内部函数开始执行则把自己的活动对象添加到了这个作用域的顶端。**
-
-```html
-<script type="text/javascript">
-	function sum(num1, num2){
-      	
-		var sum = num1 + num2;
-		function inner (a) {
-			
-		}
-
-		return sum;
-	}
-
-	var sum = sum(3, 4);
-</script>
+```javascript
+var url = 'http://wthrcdn.etouch.cn/weather_mini?city='+encodeURI('深圳')+'&pwd='+pwdValue;
 ```
 
-> 内部函数的作用域：
+## 4.2	POST请求
 
-![](http://o7cqr8cfk.bkt.clouddn.com/public/16-11-11/25437750.jpg)
+​	post请求的的参数是在send方法中携带，参数的格式必须是：xxx=XXX&yyy=YYY格式。并且需要添加头部信息
 
-> 函数执行后的作用域示意图不再画出。
+xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
 
-# 四、闭包
-
-> 看下面的代码：
-
-```html
-<script type="text/javascript">
-	function createSumFunction(num1, num2){
-		return function () {
-			return num1 + num2;
-		};
-	}
-
-	var sumFun = createSumFunction(3, 4);
-	var sum = sumFun();
-	alert(sum);
-</script>
-
+```javascript
+//post请求必须添加这个头部
+xhr.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+xhr.send('user='+nameVal + '&pwd=' + pwdVal);
 ```
 
-​	在上面的代码中，createSumFunction函数返回了一个匿名函数，而这个匿名函数使用了createSumFunction函数中的局部变量(参数)，即使createSumFunction这个函数执行结束了，由于作用域链的存在，他的局部变量在匿名函数中仍然可以使用，这个匿名函数就是闭包。
+# 五、同源策略
 
-​	**闭包是指有权访问另一个函数作用域中的变量的函数。**
+## 5.1	什么是同源策略
 
-​	 闭包是一种特殊的对象。它由两部分构成： **函数，以及创建该函数的环境** 。环境由闭包创建时在作用域中的任何局部变量组成。在我们的例子中，`sumFun` 是一个闭包，由 `匿名` 函数和闭包创建时存在的`num1`和`num2` 两个局部变量组成。
+​	 同源策略，它是由Netscape提出的一个著名的安全策略，现在所有的可支持javascript的浏览器都会使用这个策略。最初，它的含义是指，A网页设置的 Cookie，B网页不能打开，除非这两个网页"同源"。所谓"同源"指的是"**三个相同**"。
+
+1. 协议相同
+
+2. 域名相同
+
+3. 端口号相同
+
+   例如：http://www.yztcedu.com:80/index.html
+
+   协议： http
+
+   域名：www.yztcedu.com
+
+   端口号：80(省略的时候默认是80)
+
+   ​
+
+   http://www.yztcedu.com/another.html	同源
+
+   https://www.yztcedu.com/a.html	不同源 因为协议不同
+
+   http://www.yztc.com/a.html	不同源	因为域名不同
+
+   http://www.yztcedu.com:8080/a.html	不同源	因为端口号不同。
+
+   要想同源，三个必须完全相同。
+
+## 5.2	同源策略的目的
+
+​	同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。
+
+## 5.2	同源策略的限制范围
+
+​	随着互联网的发展，"同源政策"越来越严格。目前，如果非同源，共有三种行为受到限制。
+
+（1） Cookie、LocalStorage 和 IndexDB 无法读取。
+
+（2） DOM 无法获得。
+
+**（3） AJAX 请求接收不到数据。**   
 
 
 
-# 五、闭包的应用
+# 六、AJAX中规避同源策略
 
-## 5.1	返回外部函数的局部变量
+​	在AJAX中，同源策略要求，AJAX只能发给同源的网址，否则就报错。
 
-```html
-<script type="text/javascript">
-	function outer () {
-		var num = 5;
-      	//定义一个内部函数
-		function inner () {
-          	//内部函数的返回值是外部函数的一个局部变量
-			return num;
-		}
-      	//把局部变量的值++
-		num++;
-      	// 返回内部函数
-		return inner;
-	}
-  	var num = outer()();  // 6
-  	alert(num);  
-</script>
+![](http://o7cqr8cfk.bkt.clouddn.com/public/16-11-14/63159156.jpg)
+
+## 6.1	使用JSONP规避同源（服务器端和前端要配合）
+
+​	JSONP是服务器与客户端跨源通信的常用方法。最大特点就是简单适用，老式浏览器全部支持，服务器改造非常小。
+
+​	它的基本思想是，网页通过动态添加一个 script 元素，向服务器请求 JSON 数据，这种做法不受同源政策限制；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。
+
+```javascript
+//函数功能：添加script标签。	参数表示AJAX要请求的地址(一个外部的网页)。
+function addScriptTag(src) {
+  var script = document.createElement('script');
+  script.setAttribute("type","text/javascript");
+  script.src = src;
+  document.body.appendChild(script);
+}
+//请求参数中添加一个callback参数，用来指定回调函数的名字，这对于JSONP是必须的。
+window.onload = function () {
+  addScriptTag('http://localhost:8020?callback=foo');
+}
+//回调函数。 一旦响应成功，会执行该方法
+function foo(data) {
+  alert(data);
+  console.log(data);
+};
 ```
 
-> 说明：
+*使用JSONP的局限性：只能使用get请求，不能发送post请求。如果想要发送post请求，只能其他的途径*
 
-1. 这例子中，虽然函数的声明在num++之前，但是函数返回的时候num已经++过了，所以只是num自增之后的值。
-2. 结论：闭包中使用的局部变量的值，一定是局部变量的最后的值。
+## 6.2	服务器断打破同源( *必须服务器支持* )
 
+![](http://o7cqr8cfk.bkt.clouddn.com/16-12-10/15828407-file_1481381845672_6961.png)
 
+> php端支持跨域的代码：
 
-## 5.2	使用函数自执行和闭包封装对象
-
-> 封装一个能够增删改查的对象
-
-```html
-<script type="text/javascript">
-	var person = (function () {
-      	//声明一个对象，增删改查均是针对这个对象
-		var personInfo = {
-			name : "李四",
-			age : 20
-		};
-      	//返回一个对象，这个对象中封装了一些对personInfor操作的方法
-		return {
-          	//根据给定的属性获取这个属性的值
-			getInfo : function (property) {
-				return personInfo[property];
-			},
-          	//修改一个属性值
-			modifyInfo : function (property, newValue) {
-				personInfo[property] = newValue;
-				
-			},
-          	//添加新的属性
-			addInfo : function (property, value) {
-				personInfo[property] = value;
-				
-			},
-          	 //删除指定的属性
-			delInfo : function (property) {
-				delete personInfo[property];
-				
-			}
-		}
-	})();
-	alert(person.getInfo("name"));
-	person.addInfo("sex", "男");
-	alert(person.getInfo("sex"));
-</script>
+```php
+header("Access-Control-Allow-Origin:*");
 ```
 
-## 5.3	for循环典型问题
+# 七、AJAX的数据解析
 
-> 看下面的代码
+## 7.1	解析JSON数据
 
-```html
-<body>
-	<input type="button" value="按钮1"	>
-	<input type="button" value="按钮2"	>
-	<input type="button" value="按钮3"	>
-	<script type="text/javascript">
-		var btns = document.getElementsByTagName("input");
-		for (var i = 0; i < 3; i++) {
-			btns[i].onclick = function () {
-				alert("我是第" + (i + 1) + "个按钮");
-			};
-		}
-	</script>
-</body>	
+## 7.2	解析XML数据
+
+> 一段xml数据：
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<users>
+	<user id="1" >
+		<name>李四</name>
+		<age>20</age>
+		<sex>男</sex>
+	</user>
+	<user id="2">
+		<name>张三</name>
+		<age>20</age>
+		<sex>女</sex>
+	</user>
+</users>	
 ```
 
-发现在点击三个按钮的时候都是弹出   **我是第4个按钮**。	为什么呢？闭包导致的！  每循环一次都会有一个匿名函数设置点击事件，闭包总是保持的变量的最后一个值，所以点击的时候，总是读的是 i 的组后一个值4.
+# 八、使用ajax提交表单数据
 
-> 解决方案1：给每个按钮添加一个属性，来保存 每次 i 的临时值
+## 8.1	FormData
 
-```html
-<body>
-	<input type="button" value="按钮1"	>
-	<input type="button" value="按钮2"	>
-	<input type="button" value="按钮3"	>
-	<script type="text/javascript">
-		var btns = document.getElementsByTagName("input");
-		for (var i = 0; i < 3; i++) {
-          	//把i的值绑定到按钮的一个属性上，那么以后i的值就和index的值没有关系了。
-			btns[i].index = i;
-			btns[i].onclick = function () {
-				alert("我是第" + (this.index + 1) + "个按钮");
-			};
-		}
-	</script>
-</body>
+> FormData主要方便序列化表单数据和创建与表单数据格式相同的数据。
+
+```javascript
+//创建一个FormData对象
+var data = new FormData(); 
+//append接收两个参数：键和值。相当于表单中的name的值和value的值
+data.append("name", "lisi");
 ```
 
-> 解决方案2：使用匿名函数的自执行
+> 传入表单元素，则可以把表单中的数据直接存入到了FormData中
 
-```html
-<body>
-	<input type="button" value="按钮1"	>
-	<input type="button" value="按钮2"	>
-	<input type="button" value="按钮3"	>
-	<script type="text/javascript">
-		var btns = document.getElementsByTagName("input");
-		for (var i = 0; i < 3; i++) {	
-          	//因为匿名函数已经执行了，所以会把 i 的值传入到num中，注意是i的值，所以num
-			(function (num) {
-				btns[i].onclick = function () {
-					alert("我是第" + (num + 1) + "个按钮");
-				}
-			})(i);
-		}
-	</script>
-</body>
+```javascript
+//直接把表单中的数据存入到FormData中
+var data = new FormData(document.forms[0]);
 ```
 
+> 有了FormData对象可以把它作为send函数的参数。
 
+```javascript
+xhr.send(new FormData(form))
+```
+
+**注意：**
+
+​	使用 FormData 的方便之处体现在**不必明确地在 XHR 对象上设置请求头部**。XHR 对象能够别传 入的数据类型是 FormData 的实例，并配置适当的头部信息。
+
+# 附录php代码
+
+```php
+<?php
+/*$user = $_POST["user"];
+$pwd = $_POST["pwd"];*/
+
+$user = $_GET["user"];
+$pwd = $_GET["pwd"];
+if($user == "zs"){
+	echo $user . "登录成功";
+}else{
+	echo $user . "登录失败";
+}
+?>
+```
 

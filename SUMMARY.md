@@ -25,4 +25,5 @@
 * [Day04---作用域和闭包](di-2-bu-52063a-javascript-gao-ji/day04zuo-yong-yu-he-bi-bao.md)
 * [Day05---面向对象综合](di-2-bu-52063a-javascript-gao-ji/day05mian-xiang-dui-xiang-zong-he.md)
 * [Day06-07---ajax](di-2-bu-52063a-javascript-gao-ji/day06-07-ajax.md)
+* [Day08---动画和特效](di-2-bu-52063a-javascript-gao-ji/day08dong-hua-he-te-xiao.md)
 

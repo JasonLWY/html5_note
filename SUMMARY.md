@@ -27,4 +27,10 @@
 * [Day06-07---ajax](di-2-bu-52063a-javascript-gao-ji/day06-07-ajax.md)
 * [Day08---动画和特效](di-2-bu-52063a-javascript-gao-ji/day08dong-hua-he-te-xiao.md)
 * [Day09---设计模式](di-2-bu-52063a-javascript-gao-ji/day09she-ji-mo-shi.md)
+* [Day11---ajax1](di-2-bu-52063a-javascript-gao-ji/day11-ajax1.md)
+* [Day12---jquery2](di-2-bu-52063a-javascript-gao-ji/day12-jquery2.md)
+* [Day13---jquery3](di-2-bu-52063a-javascript-gao-ji/day13-jquery3.md)
+* [Day14---jquery4](di-2-bu-52063a-javascript-gao-ji/day14-jquery4.md)
+* [Day15---Less](di-2-bu-52063a-javascript-gao-ji/day15-less.md)
+* [Day16---nodejs](di-2-bu-52063a-javascript-gao-ji/day16-nodejs.md)
 

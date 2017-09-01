@@ -34,3 +34,7 @@
 * [Day15---Less](di-2-bu-52063a-javascript-gao-ji/day15-less.md)
 * [Day16---nodejs](di-2-bu-52063a-javascript-gao-ji/day16-nodejs.md)
 
+## 第3部分: ES6部分
+
+* [ES6内容](di-3-bu-52063a-es6-bu-fen/es6nei-rong.md)
+

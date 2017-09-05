@@ -48,4 +48,5 @@
 * [Day06---移动端事件](di-4-bu-52063a-yi-dong-duan-kai-fa/day06yi-dong-duan-shi-jian.md)
 * [Day07---多媒体](di-4-bu-52063a-yi-dong-duan-kai-fa/day07duo-mei-ti.md)
 * [Day08---canvas](di-4-bu-52063a-yi-dong-duan-kai-fa/day08-canvas.md)
+* [Day09---HTML5新API](di-4-bu-52063a-yi-dong-duan-kai-fa/day09-html5xin-api.md)
 

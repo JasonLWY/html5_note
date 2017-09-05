@@ -46,4 +46,6 @@
 * [Day04---移动端 webapp 开发](di-4-bu-52063a-yi-dong-duan-kai-fa/day04yi-dong-duan-webapp-kai-fa.md)
 * [Day05---弹性布局](di-4-bu-52063a-yi-dong-duan-kai-fa/day05dan-xing-bu-ji.md)
 * [Day06---移动端事件](di-4-bu-52063a-yi-dong-duan-kai-fa/day06yi-dong-duan-shi-jian.md)
+* [Day07---多媒体](di-4-bu-52063a-yi-dong-duan-kai-fa/day07duo-mei-ti.md)
+* [Day08---canvas](di-4-bu-52063a-yi-dong-duan-kai-fa/day08-canvas.md)
 

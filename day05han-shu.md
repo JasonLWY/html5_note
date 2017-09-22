@@ -387,6 +387,8 @@ doSomething("a", "b", "c", "d");
 
 > 有些场景，我们需要定义完函数之后立即执行，这个时候可以定义一个匿名函数来完成。
 
+> immediately-invoked function expression (IIFE)
+
 ```javascript
 (function () {
 	alert("匿名函数立即执行")

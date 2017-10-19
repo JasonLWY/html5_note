@@ -32,3 +32,22 @@ Bootstrap 排版、链接样式设置了基本的全局样式。分别是：
 
 为了增强跨浏览器表现的一致性，我们使用了 `Normalize.css`，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
 
+# 布局容器
+
+Bootstrap 需要为页面内容和栅格系统包裹一个 `.container` 容器。我们提供了两个作此用处的类。注意，由于 `padding` 等属性的原因，这两种 容器类不能互相嵌套。
+
+.container 类用于固定宽度并支持响应式布局的容器。
+
+```html
+<div class="container">
+  ...
+</div>
+```
+
+.container-fluid 类用于 100% 宽度，占据全部视口（viewport）的容器。
+
+```html
+<div class="container-fluid">
+  ...
+</div>
+```

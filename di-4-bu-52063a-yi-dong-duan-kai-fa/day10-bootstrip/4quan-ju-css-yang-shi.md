@@ -54,13 +54,21 @@ Bootstrap 需要为页面内容和栅格系统包裹一个 `.container` 容器�
 
 # 栅格系统(`Grid system`)
 
+## 简介
+
 Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，随着屏幕或视口（viewport）尺寸的增加，系统会自动分为最多12列。它包含了易于使用的预定义类，还有强大的mixin 用于生成更具语义的布局。
 
 
 <img src="http://o7cqr8cfk.bkt.clouddn.com/markdown/1508404938876.png">
 
 
+## 媒体查询
 
+<img src="http://o7cqr8cfk.bkt.clouddn.com/markdown/1508405347915.png">
+
+## 栅格参数
+
+![](http://o7cqr8cfk.bkt.clouddn.com/17-10-19/54905252.jpg)
 
 
 

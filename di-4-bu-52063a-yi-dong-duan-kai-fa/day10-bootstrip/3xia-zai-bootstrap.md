@@ -67,6 +67,7 @@ bootstrap/
 **要重复了解模板中的每一行代码!**
 
 ```html
+
 <!DOCTYPE html>
 <html lang="zh-CN">
   <head>
@@ -89,7 +90,9 @@ bootstrap/
   <body>
     <h1>你好，世界！</h1>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins)
+    jquery插件对Bootstrap是必须的, 因为Bootstrap依赖jquery.
+      -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>

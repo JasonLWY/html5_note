@@ -28,3 +28,7 @@ Bootstrap 排版、链接样式设置了基本的全局样式。分别是：
 3. 为所有链接设置了基本颜色 `@link-color` ，并且当链接处于 `:hover` 状态时才添加下划线
 这些样式都能在 `scaffolding.less` 文件中找到对应的源码。
 
+# Normalize.css
+
+为了增强跨浏览器表现的一致性，我们使用了 `Normalize.css`，这是由 Nicolas Gallagher 和 Jonathan Neal 维护的一个CSS 重置样式库。
+

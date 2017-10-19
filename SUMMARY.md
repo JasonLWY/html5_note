@@ -53,6 +53,7 @@
   * [1.什么是web框架](di-4-bu-52063a-yi-dong-duan-kai-fa/day10-bootstrip/1shi-yao-shi-web-kuang-jia.md)
   * [2.为什么使用bootstrap](di-4-bu-52063a-yi-dong-duan-kai-fa/day10-bootstrip/2wei-shi-yao-shi-yong-bootstrap.md)
   * [3.bootstrap基本使用](di-4-bu-52063a-yi-dong-duan-kai-fa/day10-bootstrip/3xia-zai-bootstrap.md)
+  * [4.全局css样式](di-4-bu-52063a-yi-dong-duan-kai-fa/day10-bootstrip/4quan-ju-css-yang-shi.md)
 
 ## 第5部分:anglar
 

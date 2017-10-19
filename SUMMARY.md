@@ -51,6 +51,7 @@
 * [Day09---HTML5新API](di-4-bu-52063a-yi-dong-duan-kai-fa/day09-html5xin-api.md)
 * [Day10---bootstrap](di-4-bu-52063a-yi-dong-duan-kai-fa/day10-bootstrip.md)
   * [1.什么是web框架](di-4-bu-52063a-yi-dong-duan-kai-fa/day10-bootstrip/1shi-yao-shi-web-kuang-jia.md)
+  * [2.为什么使用bootstrap](di-4-bu-52063a-yi-dong-duan-kai-fa/day10-bootstrip/2wei-shi-yao-shi-yong-bootstrap.md)
 
 ## 第5部分:anglar
 

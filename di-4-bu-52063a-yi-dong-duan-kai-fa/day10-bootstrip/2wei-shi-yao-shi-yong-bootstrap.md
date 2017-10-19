@@ -10,3 +10,18 @@ Bootstrap使用HTML和CSS创建模板、排版、表单、导航、按钮、表�
 
 # 为什么应该使用Bootstrap
 
+- Bootstrap很容易获得
+
+在网站上可以有多种方式来使用Bootstrap。您可以使用Saas或者Less，也可以两者都不用；
+
+- Bootstrap高度可配置
+
+您可以构建自己的Bootstrap版本，只包含网站需要的组件。这可以保持较小的体积
+
+- Bootstrap包含Glyphicons
+ 
+所能使用的200种图标通常不是免费的。但是如果使用Bootstrap，就可以免费使用Halflings Glyphicons，它是唯一提供Glyphicons的Web框架。
+ 
+- Bootstrap鼓励移动优先设计
+
+您可以为移动客户设计Bootstrap页面，无需做任何事情就能知道在较大的台式机屏幕上会有什么反应。而如果您打算为更大的屏幕做一些装饰，Bootstrap也能够简化此类工作。

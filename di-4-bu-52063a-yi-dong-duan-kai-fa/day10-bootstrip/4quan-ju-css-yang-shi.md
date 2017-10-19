@@ -70,6 +70,8 @@ Bootstrap 提供了一套响应式、移动设备优先的流式栅格系统，�
 
 ![](http://o7cqr8cfk.bkt.clouddn.com/17-10-19/54905252.jpg)
 
+**各个参数细讲:**
+
 
 
 

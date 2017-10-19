@@ -64,7 +64,7 @@ bootstrap/
 
 拷贝并粘贴下面给出的 HTML 代码，这就是一个最简单的 Bootstrap 页面了。
 
-要重复了解模板中的每一行代码!
+**要重复了解模板中的每一行代码!**
 
 ```html
 <!DOCTYPE html>

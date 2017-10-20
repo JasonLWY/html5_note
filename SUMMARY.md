@@ -16,7 +16,6 @@
 * [Day12---事件对象](day12shi-jian-dui-xiang.md)
 * [Day13---日期对象和万年历](day13ri-qi-dui-xiang-he-wan-nian-li.md)
 * [Day14---正则表达式](day14zheng-ze-biao-da-shi.md)
-* [测试](ce-shi.md)
 
 ## 第2部分: JavaScript 高级
 

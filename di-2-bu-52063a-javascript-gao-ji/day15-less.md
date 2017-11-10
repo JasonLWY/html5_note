@@ -280,7 +280,7 @@ CSS 的注释格式在LESS 中依然有效：
 .class{ color: black } 
 ```
 
-LESS 同样也支持双斜线的注释，但是编译成CSS 的时候自动过滤掉：
+LESS 同样也支持双斜线的注释，但是编译成CSS 的时候会自动过滤掉：
 
 ```less
 //Hi, I'm a silent comment, I won't show up in your CSS 

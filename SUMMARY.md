@@ -37,6 +37,7 @@
 ## 第3部分: ES6部分
 
 * [ES6内容](di-3-bu-52063a-es6-bu-fen/es6nei-rong.md)
+* [promise](di-3-bu-52063a-es6-bu-fen/promise.md)
 
 ## 第4部分:移动端开发
 

@@ -147,6 +147,9 @@ transform: skew(40deg,20deg);
 >
 > ​	**要把它用在父容器中。**
 
+<img src="http://o7cqr8cfk.bkt.clouddn.com/markdown/1510838580809.png-yztcText">
+
+
 ### 1.2.2	translate3d(x,y,z)
 
 > translate3D(x,y,z)  可以在x,y,z三个方向移动。

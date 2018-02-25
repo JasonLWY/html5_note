@@ -65,7 +65,7 @@
 	</head>
 	<body>
 		<div class="box">
-			<a href="http://www.atguigu.com/">点我去育知同创</a>
+			<a href="http://www.atguigu.com/">点我去xyxyxy</a>
 		</div>
         <div>
             <input type="text" name="user" id="user" value="" />
@@ -107,7 +107,7 @@
 
 	<body>
 		<div class="box">
-			<a href="http://www.atguigu.com/">点我去育知同创</a>
+			<a href="http://www.atguigu.com/">点我去xyxyxy</a>
 		</div>
 		<div><button>更换友情链接</button></div>
 	</body>

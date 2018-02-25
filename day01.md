@@ -189,8 +189,8 @@ C：虽然这个时候不再script标签中添加js代码，但是也不能把sc
 
 > 3、**在HTML标签中: ** 作为某个元素的事件属性值或者是超链接 href属性值。
 ```javascript
-<a href="javascript:alert('育知同创欢迎你!')">点我啊</a>
-<input name="btn" type="button" value="弹出消息框"  onclick="javascript:alert('育知同创欢迎你!');"/>
+<a href="javascript:alert('xyxyxy欢迎你!')">点我啊</a>
+<input name="btn" type="button" value="弹出消息框"  onclick="javascript:alert('xyxyxy欢迎你!');"/>
 ```
 ## 2.2	JavaScript语法基本要求
 

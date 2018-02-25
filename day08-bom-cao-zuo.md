@@ -307,7 +307,7 @@ win.close();
 > 1. assign(newUrl): 加载新的文档。
 
 ```javascript
-<button onclick="openNewUrl();">打开育知同创首页</button>
+<button onclick="openNewUrl();">打开xyxyxy首页</button>
 <script type="text/javascript">
 	function openNewUrl () {
 		location.assign("http://www.atguigu.com/");

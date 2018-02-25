@@ -80,12 +80,12 @@
     	var btn = document.getElementById("btn");
     	//使用匿名函数添加事件处理程序
     	btn.addEventListener("click", function () {
-    		alert("欢迎来到育知同创");
+    		alert("欢迎来到xyxyxy");
     	}, false);
     	// 移除使用的处理程序虽然和注册的处理程序代码一样，但是因为两次都是用的匿名函数，所以
     	// 两次用的肯定不是同一个函数。所以移除不起作用。
     	btn.removeEventListener("click", function () {
-    		alert("欢迎来到育知同创");
+    		alert("欢迎来到xyxyxy");
     	}, false);
     </script>
  

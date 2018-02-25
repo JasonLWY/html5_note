@@ -57,7 +57,7 @@
 </html>
 ```
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/79916448-file_1488292082454_fd38.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/79916448-file_1488292082454_fd38.png)
 
 > 如果仅仅沿x或y某一个方向运动，也可以使用：
 >
@@ -75,7 +75,7 @@
 >
 > 参数必须是度数。大于0表示顺时针旋转的度数，小于0表示逆时针旋转的角度。
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/2397653-file_1488292846911_136d5.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/2397653-file_1488292846911_136d5.png)
 
 > 注意：
 
@@ -86,7 +86,7 @@
 transform-origin: 0 0;
 ```
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/66626316-file_1488293210743_14c9b.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/66626316-file_1488293210743_14c9b.png)
 
 ### 1.1.3	scale
 
@@ -103,14 +103,14 @@ transform-origin: 0 0;
 transform: scale(.5);
 ```
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/66956068-file_1488293498004_38cd.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/66956068-file_1488293498004_38cd.png)
 
 ```css
 transform-origin: 0 0;
 transform: scale(.5);
 ```
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/51264390-file_1488293883698_15c26.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/51264390-file_1488293883698_15c26.png)
 
 ### 1.1..4	skew
 
@@ -127,7 +127,7 @@ transform-origin: 0 0;
 transform: skew(40deg,20deg);
 ```
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/41140946-file_1488294903973_1b54.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-2-28/41140946-file_1488294903973_1b54.png)
 
 ## 1.2	3D转换
 
@@ -137,7 +137,7 @@ transform: skew(40deg,20deg);
 >
 > 默认情况水平向右为x轴正方形、垂直向下为y轴正方形、垂直于屏幕向外的为z轴正方形
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-3-1/94538587-file_1488376417580_2f25.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-3-1/94538587-file_1488376417580_2f25.png)
 
 ### 1.2.1	perspective属性
 
@@ -147,7 +147,7 @@ transform: skew(40deg,20deg);
 >
 > ​	**要把它用在父容器中。**
 
-<img src="http://o7cqr8cfk.bkt.clouddn.com/markdown/1510838580809.png-yztcText">
+<img src="http://o7cqr8cfk.bkt.clouddn.com/markdown/1510838580809.png">
 
 
 ### 1.2.2	translate3d(x,y,z)
@@ -198,7 +198,7 @@ transform: skew(40deg,20deg);
 </html>
 ```
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-3-5/67817135-file_1488688292604_9210.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-3-5/67817135-file_1488688292604_9210.png)
 
 ### 1.2.4	scale3d(sx, sy, sz)
 
@@ -250,7 +250,7 @@ transform: skew(40deg,20deg);
 </html>
 ```
 
- ![](http://o7cqr8cfk.bkt.clouddn.com/17-3-5/44746943-file_1488690975973_b479.png-yztcText)
+ ![](http://o7cqr8cfk.bkt.clouddn.com/17-3-5/44746943-file_1488690975973_b479.png)
 
 ## 1.3	正方体案例
 
@@ -328,7 +328,7 @@ transform: skew(40deg,20deg);
 </html>
 ```
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-3-5/41271273-file_1488702997522_1365f.gif-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-3-5/41271273-file_1488702997522_1365f.gif)
 
 # 二、CSS3过渡(transition)
 
@@ -338,7 +338,7 @@ transform: skew(40deg,20deg);
 >
 > **不同的状态可以通过伪类像`:hover`、`:active`来定义。也可以通过js代码来动态的改变。**
 
-![](http://o7cqr8cfk.bkt.clouddn.com/17-3-5/17269928-file_1488706322114_fd14.png-yztcText)
+![](http://o7cqr8cfk.bkt.clouddn.com/17-3-5/17269928-file_1488706322114_fd14.png)
 
 
 

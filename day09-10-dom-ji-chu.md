@@ -599,7 +599,7 @@ document.querySelector("p.example");  //获取文档中 class="example" 的第�
 
 ```html
 <body>
-    <a id="id1" href="http://www.yztcedu.com" target="_blank">育知同创官网</a>.
+    <a id="id1" href="http://www.atguigu.com/" target="_blank">育知同创官网</a>.
     <br />
 	<p>
     	<button onclick="myFunction()">点我获取超级链接的 id 属性值，tafget 属性值</button>
@@ -699,7 +699,7 @@ document.querySelector("p.example");  //获取文档中 class="example" 的第�
 
 ```html
 <body>
-    <p id="p1"><a href="http://www.yztcedu.com">点我进入育知同创官网</a></p>
+    <p id="p1"><a href="http://www.atguigu.com/">点我进入育知同创官网</a></p>
 
     <P><button onclick="getHTML();">点我获取超级链接的所有内容</button></P>
 
@@ -725,7 +725,7 @@ document.querySelector("p.example");  //获取文档中 class="example" 的第�
 
 ```html
 <body>
-    <p id="p1"><a href="http://www.yztcedu.com">点我进入育知同创官网</a></p>
+    <p id="p1"><a href="http://www.atguigu.com/">点我进入育知同创官网</a></p>
 
     <P><button onclick="getHTML();">点我获取超级
       链接的所有内容</button></P>

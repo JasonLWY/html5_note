@@ -183,7 +183,7 @@ xhr.send('user='+nameVal + '&pwd=' + pwdVal);
 
 3. 端口号相同
 
-   例如：http://www.yztcedu.com:80/index.html
+   例如：http://www.atguigu.com/:80/index.html
 
    协议： http
 
@@ -193,13 +193,13 @@ xhr.send('user='+nameVal + '&pwd=' + pwdVal);
 
    ​
 
-   http://www.yztcedu.com/another.html	同源
+   http://www.atguigu.com/another.html	同源
 
    https://www.yztcedu.com/a.html	不同源 因为协议不同
 
    http://www.yztc.com/a.html	不同源	因为域名不同
 
-   http://www.yztcedu.com:8080/a.html	不同源	因为端口号不同。
+   http://www.atguigu.com/:8080/a.html	不同源	因为端口号不同。
 
    要想同源，三个必须完全相同。
 

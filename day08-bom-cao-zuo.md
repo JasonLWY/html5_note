@@ -144,7 +144,7 @@ alert("窗口宽度：" + w + "\n窗口高度：" + h);
     
     <script type="text/javascript">
     function openAnother () {
-    	window.open("http://www.yztcedu.com"); //打开新窗口，窗口特性全部使用默认值。
+    	window.open("http://www.atguigu.com/"); //打开新窗口，窗口特性全部使用默认值。
     }
     </script>
 </body>
@@ -159,7 +159,7 @@ alert("窗口宽度：" + w + "\n窗口高度：" + h);
     <script type="text/javascript">
       var win;
       function openAnother () {
-          win = window.open("http://www.yztcedu.com", "", "width=400, height=400, toolbar = no, menubar = no,left = 200, right = 200");
+          win = window.open("http://www.atguigu.com/", "", "width=400, height=400, toolbar = no, menubar = no,left = 200, right = 200");
       }
     </script>
 </body>
@@ -192,7 +192,7 @@ win.close();
   	// setTimeout方法会返回一个值，表示超时调用的id，可以在任务执行前取消任务。
 	var timeOutId = window.setTimeout(go, 3000);  // 3秒中之后执行函数go中的代码
     function go () {
-      	window.open("http://www.yztcedu.com")
+      	window.open("http://www.atguigu.com/")
     }	
 	window.clearTimeout(this.timerId);  //取消这个超时调用，如果超时调用已经执行完毕，就什么也不会发生。
 </script>
@@ -310,7 +310,7 @@ win.close();
 <button onclick="openNewUrl();">打开育知同创首页</button>
 <script type="text/javascript">
 	function openNewUrl () {
-		location.assign("http://www.yztcedu.com");
+		location.assign("http://www.atguigu.com/");
 	}
 </script>
 ```
@@ -321,7 +321,7 @@ win.close();
 <button onclick="replaceDoc();">替换当前网页</button>
 <script type="text/javascript">
 	function replaceDoc () {
-		location.replace("http://www.yztcedu.com");
+		location.replace("http://www.atguigu.com/");
 	}
 </script>
 ```

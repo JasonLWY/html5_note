@@ -1,4 +1,4 @@
-#  高级Day 02---理解原型![](http://www.yztcedu.com/images/logo.png)
+#  高级Day 02---理解原型![](http://www.atguigu.com/images/logo.png)
 
 # 一、什么是原型
 

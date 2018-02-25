@@ -1,4 +1,4 @@
-#  高级Day 03---JavaScript的继承![](http://www.yztcedu.com/images/logo.png)
+#  高级Day 03---JavaScript的继承![](http://www.atguigu.com/images/logo.png)
 
 # 一、继承的概念
 

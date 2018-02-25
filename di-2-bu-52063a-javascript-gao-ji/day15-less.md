@@ -1,4 +1,4 @@
-# 高级Day 14---LESS![](http://www.yztcedu.com/images/logo.png)
+# 高级Day 14---LESS![](http://www.atguigu.com/images/logo.png)
 
 # 一、Less介绍
 

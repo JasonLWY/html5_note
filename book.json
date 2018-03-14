@@ -1,5 +1,5 @@
 {
-    "title" : "Javascript 课堂笔记",
+    "title" : "HTML5课堂笔记",
     "author":" 李振超",
 
     "description":"课堂笔记,学生提前预习",
@@ -24,11 +24,27 @@
        "prism", 
        "prism-themes",
        "tbfed-pagefooter",
-       "sitemap"
+       "sitemap",
+       "change_girls"
     ],
     "pluginsConfig": {
+        "change_girls" : {
+            "time" : 3,
+            "urls" : [
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/62171757.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/83394736.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/15906185.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/15906185.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/3394270.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/65028582.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/20359261.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/37472401.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/3355397.jpg-atguiguImg",
+                "http://o7cqr8cfk.bkt.clouddn.com/18-3-4/11075549.jpg-atguiguImg"
+            ]
+        },
         "page-toc-button": {
-            "maxTocDepth": 2,
+            "maxTocDepth": 3,
             "minTocSize": 2
         },
         "disqus": {
@@ -40,7 +56,7 @@
             ]
         },
          "tbfed-pagefooter": {
-            "copyright":"Copyright &copy 李振超 2017",
+            "copyright":"Copyright &copy 李振超 2018",
             "modify_label": "<br>该文件最后修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
